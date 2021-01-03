@@ -1,0 +1,227 @@
+header {
+	height: 100vh;
+
+	nav {
+
+
+		@include flex(space-between, center);
+		height: 75px;
+		width: 100%;
+		background-color: $light-color;
+
+		.logo {
+			height: 100%;
+			width: 20%;
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 0 1.25em;
+				background-color: $secondary-color;
+				color: $light-color;
+				line-height: 75px;
+				text-align: center;
+			}
+		}
+
+		.menu_full {
+
+			@include flex(space-evenly, center);
+			width: 100%;
+
+			li {
+				width: calc(100% / 6);
+				text-align: center;
+			}
+
+			a {
+				color: $base-color;
+
+				&:hover {
+					color: $secondary-color;
+				}
+			}
+		}
+
+		.menu_full_search {
+			position: relative;
+			width: 20%;
+			padding: 0 1.25em;
+			text-align: center;
+
+			&::after {
+				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
+				content: "\f002";
+				color: $base-color;
+			}
+
+			&__input {
+
+				width: 80%;
+				border: 0;
+				border-bottom: 1px solid $base-color;
+
+			}
+		}
+	}
+
+	.jumbo {
+		position: relative;
+		height: calc(100vh - 4.7em);
+		background-size: cover;
+		background-position: center center;
+
+
+		&__container {
+
+			position: relative;
+			height: 100%;
+			width: 100%;
+
+			&__layover {
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background-color: $layover-color;
+
+			}
+
+			&__text {
+
+				@include absolute(auto, 75%, 50%, '', '', 50%);
+				@include flex(space-evenly, center, column);
+
+				max-width: 30em;
+				min-width: 25em;
+				transform: translate(-50%, -50%);
+
+				text-align: center;
+				color: $light-color;
+
+			}
+		}
+
+		&__next {
+
+			@include absolute(auto, auto, '', 1.25em, 1.25em, '');
+
+			&__img {
+
+				@include absolute(17.5em, 12.5em, '', 0, 3.125em, '');
+				display: none;
+
+			}
+
+			&__layover {
+
+				@include absolute(17.5em, 12.5em, '', 0, 3.125em, '');
+				display: none;
+				color: white;
+				background-color: rgba(0, 0, 0, 0.5);
+				border: 1px solid #d0c5b6;
+
+				&__text {
+					padding: 1.25em;
+					width: 80%;
+				}
+
+			}
+
+
+			&__btn {
+				background-color: transparent;
+				border: none;
+				padding: .31px 0 .31px .31px;
+				font-size: 1.5rem;
+
+				color: white;
+				cursor: pointer;
+
+				&::after {
+					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
+					content: "\f105";
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+/* ***************** */
+/**** hidden menu ****/
+/* ***************** */
+
+.hamburgher__icon {
+	display: none;
+	cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+	width: 35px;
+	height: 3px;
+	background-color: $secondary-color;
+	margin: 6px 0;
+	transition: ease 0.6s;
+}
+
+.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-8px, 8px);
+	transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.change .bar2 {
+	opacity: 0;
+}
+
+.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-4px, -4px);
+	transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.menu_hide {
+
+	@include absolute(100%, auto, 4.7em, 0, '', '');
+	z-index: 100;
+	display: none;
+	padding: 20px;
+	text-align: right;
+	background-color: $drop-color;
+	color: $light-color;
+
+	li {
+		margin: 10px 0;
+	}
+
+	a {
+		color: $grey-color;
+
+		&:hover {
+			color: $light-color;
+		}
+	}
+
+	&__search {
+		position: relative;
+
+		&::before {
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f002";
+			color: $light-color;
+		}
+
+		&__input {
+
+			width: 120px;
+			color: $light-color;
+			background-color: transparent;
+			border: 0;
+			border-bottom: 1px solid $light-color;
+		}
+	}
+}

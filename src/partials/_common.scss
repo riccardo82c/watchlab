@@ -1,0 +1,190 @@
+/* RESET */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button,
+input {
+	outline: none;
+}
+
+
+
+
+/* TYPO */
+
+// root font-size
+html {
+	font-size: 16px;
+	/* overflow-x: hidden; */
+}
+
+.logo a {
+
+	font-family: "Montserrat-Bold";
+	font-size: 1.6rem;
+	text-transform: uppercase;
+
+}
+
+// Header
+
+nav .menu_full a {
+	font-family: "Montserrat-Regular";
+	font-size: .8rem;
+}
+
+
+nav .menu_hide a {
+	font-family: "Montserrat-Regular";
+	font-size: 1.3rem;
+}
+
+
+.menu_full_search__input {
+	font-family: "Montserrat-Regular";
+	font-size: .8rem;
+}
+
+.menu_hide__search__input {
+	font-family: "Montserrat-Regular";
+	font-size: 1.3rem;
+}
+
+h5 {
+	font-family: "Montserrat-Bold";
+	letter-spacing: 2.5px;
+	font-weight: 400;
+}
+
+h1 {
+
+	font-family: "Miller-Display_30501";
+	font-weight: 400;
+	font-size: 3.7rem;
+}
+
+.subtitle {
+	font-family: "Montserrat-Regular";
+}
+
+.btn {
+	font-family: "Miller-Display_30501";
+	font-size: 1.1rem;
+}
+
+.jumbo__next__btn {
+	font-family: "Montserrat-Bold";
+	letter-spacing: 2.5px;
+}
+
+.jumbo__next__layover__text {
+	font-family: "Miller-Display_30501";
+	font-weight: 400;
+}
+
+// Main
+h2 {
+	font-family: "Miller-Display_30501";
+	font-weight: 400;
+	font-size: 3.8rem;
+}
+
+p {
+	font-family: "Miller-Display_30501";
+	font-size: .9em;
+	letter-spacing: 1.6px;
+	line-height: 2rem;
+	font-weight: 400;
+	color: $grey-color;
+}
+
+h3 {
+	font-family: "Miller-Display_30501";
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+// Slider
+h4 {
+	font-family: "Miller-Display_30501";
+	font-weight: 400;
+	font-size: 1.8rem;
+}
+
+h5.slider__parts__3__press,
+h5.slider__parts__3__colored {
+	text-transform: uppercase;
+
+}
+
+h5.slider__parts__3__colored {
+	color: $secondary-color;
+}
+
+// Footer
+
+.info__top__links {
+	li {
+
+		a,
+		span {
+			font-family: "Miller-Display_30501";
+			font-size: .8rem;
+			letter-spacing: 1.6px;
+			line-height: 2.8em;
+			font-weight: 400;
+			color: $secondary-color;
+		}
+
+		a:hover {
+			color: $light-color;
+		}
+	}
+}
+
+
+
+/* ELEMENT */
+
+.container {
+	max-width: 1100px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+.btn {
+	display: inline-block;
+	padding: .6rem 4rem;
+	border: none;
+	text-decoration: none;
+	background: transparent;
+	color: $light-color;
+	border: 1px solid $light-color;
+	cursor: pointer;
+	text-align: center;
+	transition: background 250ms ease-in-out,
+		transform 150ms ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	&:hover {
+		background: $secondary-color;
+		border: 1px solid $secondary-color;
+		outline-offset: -4px;
+	}
+
+}

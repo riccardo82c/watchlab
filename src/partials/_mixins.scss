@@ -1,0 +1,28 @@
+@mixin flex ($justify, $align, $direction: row, ) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin absolute ($width, $height, $top: '', $right: '', $bottom: '', $left: '') {
+	position: absolute;
+	width: $width;
+	height: $height;
+
+	@if $top !='' {
+		top: $top;
+	}
+
+	@if $right !='' {
+		right: $right;
+	}
+
+	@if $bottom !='' {
+		bottom: $bottom;
+	}
+
+	@if $left !='' {
+		left: $left;
+	}
+}

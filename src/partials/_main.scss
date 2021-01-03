@@ -1,0 +1,209 @@
+main {
+	color: $base-color;
+
+	/* Articles */
+	.articles {
+		margin: 5em 0 5em 0;
+
+		display: grid;
+		/* grid-template-columns: 1fr 1fr; */
+		grid-template-areas:
+			'articles__1_title articles__1_title'
+			'articles__1_1 articles__1_2 '
+			'articles__2   articles__2_img'
+			'articles__3_img	  articles__3';
+
+		&__1_title {
+			max-width: 30em;
+		}
+
+		&__1_1 {
+			grid-area: articles__1_1;
+			max-width: 30em;
+
+			p {
+				padding: 3.125em 1.25em 3.125em 0;
+			}
+		}
+
+		&__1_2 {
+			grid-area: articles__1_2;
+
+			p {
+				padding: 3.125em 0px 3.125em 0;
+			}
+		}
+
+		&__2 {
+			grid-area: articles__2;
+		}
+
+		&__2_img {
+			grid-area: articles__2_img;
+		}
+
+		&__3_img {
+			grid-area: articles__3_img;
+		}
+
+		&__3 {
+			grid-area: articles__3;
+		}
+
+		&__card_text {
+
+			@include flex (space-between, center, column);
+
+			max-width: 30em;
+			margin: 0 auto;
+
+
+			padding: 5em 3.125em;
+			text-align: center;
+
+			h3 {
+				margin-bottom: 1.25em;
+			}
+
+			p {
+				text-align: center;
+			}
+
+		}
+
+		&__btn {
+			border: 1px solid $secondary-color;
+			color: $secondary-color;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		&__card__img {
+			max-height: 31.25em;
+		}
+
+		&__card__img img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	/* Slider */
+	.slider {
+
+		padding-bottom: 5em;
+		background: $light-color;
+		background: $grad-grey-r;
+
+		&__parts {
+			display: flex;
+			padding-top: 1.25em;
+
+			&__1 {
+				flex-basis: 30%;
+				padding-right: 3.125em;
+			}
+
+			&__2 {
+				flex-basis: 50%;
+			}
+
+			&__3 {
+				position: relative;
+				flex-basis: 30%;
+				padding: 0 1.25em;
+
+				h5 {
+					margin-bottom: 1.25em;
+				}
+
+				&__colored {
+					text-transform: uppercase;
+				}
+
+				&__title {
+					text-transform: capitalize;
+				}
+
+			}
+		}
+
+		/* carousel  */
+		&__carousel {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			img {
+
+				width: 100%;
+
+				&.active {
+					display: inline-block;
+				}
+			}
+		}
+
+		&__controller {
+			@include absolute(auto, auto, '', '', 45%, 1.25em);
+
+			span {
+				cursor: pointer;
+				font-size: 1.2em;
+				color: $grey-color;
+
+				&.next {
+					margin-left: 10px;
+				}
+			}
+		}
+
+
+	}
+
+	/* Discover */
+	.discover {
+		display: flex;
+		width: 100%;
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+
+		&__left,
+		&__right {
+			width: 50%;
+		}
+
+		&__left {
+			position: relative;
+
+			&__title {
+				@include absolute(100%, auto, 50%, '', '', 50%);
+				text-align: center;
+				transform: translate(-50%, -50%);
+				color: $light-color;
+				z-index: 20;
+			}
+
+			&__layover {
+				@include absolute(100%, 100%);
+				background-color: $layover-color;
+			}
+		}
+
+
+		&__right {
+			display: flex;
+			flex-wrap: wrap;
+
+			a {
+				flex-basis: 50%;
+
+			}
+		}
+	}
+}
